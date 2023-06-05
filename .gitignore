@@ -1,0 +1,19 @@
+# Gradle files
+.gradle/
+/build/
+# Local configuration file (e.g., for the IDE)
+/.idea/
+/.gradle/
+/local.properties
+# Generated files
+app/build/
+captures/
+# System files
+.DS_Store
+Thumbs.db
+# Dependency directories (assuming you use some popular dependency management tools)
+# For example, if you use Maven
+/.m2/
+# Or if you use Gradle
+/.gradle/
+/.idea/libraries/

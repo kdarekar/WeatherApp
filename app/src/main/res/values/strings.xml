@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Weather Tracker</string>
+    <string name="app_id">41d46d888c5cd609688b18ba6d0f21bc</string>
+    <string name="base_url">https://api.openweathermap.org/data/2.5/</string>
+    <string name="error_unknown">Error Unknown</string>
+    <string name="internet_connection_error">No internet connection</string>
+    <string name="error_code_title">Error code: %d</string>
+    <string name="url_invalid">Can not connect to `%s`, please check it</string>
+    <string name="temp">º</string>
+    <string name="percent">%</string>
+    <string name="speed">km/h</string>
+    <string name="km">km</string>
+    <string name="menu">Menu</string>
+    <string name="search_city">Search city</string>
+    <string name="humidity">Humidity</string>
+    <string name="visibility">Visibility</string>
+    <string name="wind">Wind</string>
+    <string name="real_feel">RealFeel</string>
+    <string name="city_input_invalid">City name input invalid</string>
+    <string name="lat_lon_invalid">Lat, long invalid</string>
+    <string name="zero">0</string>
+    <string name="close">Close</string>
+    <string name="remove">Remove</string>
+</resources>
