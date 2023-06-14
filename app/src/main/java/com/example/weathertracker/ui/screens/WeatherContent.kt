@@ -57,17 +57,19 @@ fun WeatherContent(
     city: String
 ) {
     Surface(color = MaterialTheme.colors.background) {
-
+        var cityName by rememberSaveable {
+            mutableStateOf(city)
+        }
         // Boolean state to hold if request was successful
         var isLoaded by rememberSaveable { mutableStateOf(false) }
 
         // Retry callback
-        val retry: () -> Unit = { viewModel.fetchWeatherCall(city) }
+        val retry: () -> Unit = { viewModel.fetchWeatherCall(cityName) }
 
         LaunchedEffect(Unit) {
             // If request unsuccessful, call again
             if (isLoaded.not())
-                viewModel.fetchWeatherCall(city)
+                viewModel.fetchWeatherCall(cityName)
         }
 
         // Update UI according to network result state
@@ -78,9 +80,10 @@ fun WeatherContent(
 
             is NetworkResult.Success -> {
                 isLoaded = true
+                cityName=result.data.name.toString()
                 WeatherScreen(
                     weatherData = result.data,
-                    city,
+                    cityName,
                     navigateToSearch = {
                         viewModel.fetchWeatherCall(it)
                     }
@@ -125,7 +128,8 @@ fun  WeatherScreen(
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .wrapContentSize(Alignment.Center).padding(10.dp),
+                        .wrapContentSize(Alignment.Center)
+                        .padding(10.dp),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
