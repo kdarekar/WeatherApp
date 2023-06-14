@@ -80,7 +80,7 @@ class LocationService(
             Timber.d("Unable connect to Geocoder -> ${e.message}")
         } finally {
             if (locationName.isNullOrEmpty())
-                locationName = "United Sates"
+                locationName = "Raleigh"
         }
 
         if (isLocation.not()) {
