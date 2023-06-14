@@ -83,7 +83,6 @@ fun WeatherContent(
                 cityName=result.data.name.toString()
                 WeatherScreen(
                     weatherData = result.data,
-                    cityName,
                     navigateToSearch = {
                         viewModel.fetchWeatherCall(it)
                     }
@@ -113,7 +112,6 @@ fun WeatherContent(
 @Composable
 fun  WeatherScreen(
     weatherData: CurrentWeather,
-    city: String,
     navigateToSearch: (city:String) -> Unit
 ) {
     Scaffold(
@@ -149,7 +147,7 @@ fun  WeatherScreen(
                         )
                     )
                     AsyncImage(
-                        model = "${OPEN_WEATHER_ICON_URL}${weatherData?.weather?.get(0)?.icon}${OPEN_WEATHER_ICON_4X}",
+                        model = "${OPEN_WEATHER_ICON_URL}${weatherData.weather?.get(0)?.icon}${OPEN_WEATHER_ICON_4X}",
                         contentDescription = null,
                         modifier = Modifier
                             .size(150.dp, 150.dp)
